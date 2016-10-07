@@ -1,4 +1,4 @@
-package com.itcast.spring.c_jdbcTemplate;
+package com.itcast.spring.d_tx;
 
 public class User {
 	private int id;

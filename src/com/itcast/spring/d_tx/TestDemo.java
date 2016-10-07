@@ -1,16 +1,27 @@
 package com.itcast.spring.d_tx;
 
-import org.junit.Test;
-import org.springframework.context.support.ClassPathXmlApplicationContext;
+import javax.annotation.Resource;
 
+import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+@RunWith(value=SpringJUnit4ClassRunner.class)
+@ContextConfiguration(value="classpath:com/itcast/spring/d_tx/applicationContext.xml")
 public class TestDemo {
+	
+	@Resource(name="userService")
+	private UserService service;
 	
 	@Test
 	public void test1(){
 		try {
-			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/itcast/spring/d_tx/applicationContext.xml");
-			UserService service =(UserService) context.getBean("userService");
-			service.save();
+			User user = new User();
+			user.setName("小泽");
+			user.setMoney(10000);
+			service.save(user);
 			
 		} catch (Exception e) {
 			e.printStackTrace();

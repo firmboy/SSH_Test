@@ -47,7 +47,7 @@ public class UserDaoImplE extends JdbcDaoSupport implements UserDao{
 				User user = new User();
 				user.setId(rs.getInt(1));
 				user.setName(rs.getString(2));
-				user.setAge(rs.getInt(3));
+				user.setMoney(rs.getDouble(3));
 				return user;
 			}
 			
