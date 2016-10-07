@@ -28,4 +28,17 @@ public class TestDemo {
 		}
 	}
 	
+	@Test
+	public void test2(){
+		try {
+			User out = new User();
+			out.setId(1);
+			User in = new User();
+			in.setId(2);
+			service.pay(out, in, 1000);			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

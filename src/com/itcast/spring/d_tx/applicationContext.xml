@@ -12,28 +12,27 @@
         http://www.springframework.org/schema/aop/spring-aop.xsd
         http://www.springframework.org/schema/tx
         http://www.springframework.org/schema/tx/spring-tx.xsd">
+   
+    <!-- 开启IOC的注解扫描 -->     
 	<context:component-scan base-package="com.itcast.spring.d_tx" />
-	
+	<!-- 开启Aop的注解扫描 -->
 	<aop:aspectj-autoproxy ></aop:aspectj-autoproxy>
+	
     <bean id="userDaoImpl" class="com.itcast.spring.d_tx.UserDaoImpl">
     	<property name="jdbcTemplate" ref="jdbcTemplate"></property>
     </bean>
     
     <bean id="userService" class="com.itcast.spring.d_tx.UserServiceImpl">
     	<property name="dao" ref="userDaoImpl"></property>
+    	<!-- <property name="transactionTemplate" ref="transactionTemplate"></property> -->
     </bean>
 	
-	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
-    	<property name="driverClass" value="com.mysql.jdbc.Driver"></property>
-    	<property name="jdbcUrl" value="jdbc:mysql:///jdbcTemplate"></property>
-    	<property name="user" value="root"></property>
-    	<property name="password" value="123"></property>
-    </bean>
-    
 	
-	<bean id="jdbcTemplate" class="org.springframework.jdbc.core.JdbcTemplate">
-		<constructor-arg name="dataSource" ref="dataSource"></constructor-arg>
-	</bean>
 	
+	<!-- <import resource="Jdbc_tx_manual.xml"/> -->
+	
+	<!-- <import resource="Jdbc_tx_auto_xml.xml"/> -->
+	
+	<import resource="Jdbc_tx_auto_aop.xml"/>
 	
 </beans>
