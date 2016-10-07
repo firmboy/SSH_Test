@@ -8,7 +8,7 @@ public class TestDemo {
 	@Test
 	public void test1(){
 		try {
-			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/itcast/spring/a_aop_xml/applicationContext.xml");
+			ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("com/itcast/spring/d_tx/applicationContext.xml");
 			UserService service =(UserService) context.getBean("userService");
 			service.save();
 			
