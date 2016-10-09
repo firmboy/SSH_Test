@@ -19,7 +19,7 @@
 		<filter-class>org.apache.struts2.dispatcher.ng.filter.StrutsPrepareAndExecuteFilter</filter-class>
 		<init-param>
 			<param-name>config</param-name>
-			<param-value>struts-default.xml,struts-plugin.xml,com/itcast/ssh/a_spring_struts2/way2/struts.xml</param-value>
+			<param-value>struts-default.xml,struts-plugin.xml,com/itcast/ssh/c_ssh/test/struts.xml</param-value>
 		</init-param>
 	</filter>
 
@@ -34,7 +34,7 @@
 	</listener>
 	<context-param>
 		<param-name>contextConfigLocation</param-name>
-		<param-value>classpath:com/itcast/ssh/a_spring_struts2/way2/applicationContext.xml</param-value>
+		<param-value>classpath:com/itcast/ssh/c_ssh/test/applicationContext.xml</param-value>
 	</context-param>
 
 </web-app>
